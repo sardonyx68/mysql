@@ -36,8 +36,8 @@ app.listen(PORT, ()=>{
 });
 
 //전체출력 t_board테이블 app.get('/매핑' (req, res)=>{ 쿼리문기술 });
-app.get('/list.do', ( req, res)=>{
-    console.log("/list.do test");
+app.get('/list', ( req, res)=>{
+    console.log("/list test");
 
     const msg = "select * from t_board order by id";
     console.log("msg : ", msg);
@@ -52,8 +52,8 @@ app.get('/list.do', ( req, res)=>{
 });
 
 //1건등록입력 insert into t_board(title, content, name) values( '${}', '${}', '${}' );
-app.get('/insert.do', ( req, res)=>{
-    console.log("/insert.do test");
+app.get('/insert', ( req, res)=>{
+    console.log("/insert test");
 
     const title = "winder";
     const content = "snow";
@@ -71,7 +71,7 @@ app.get('/insert.do', ( req, res)=>{
 });
 
 //1건 출력 t_board테이블 app.get('/매핑' (req, res)=>{ 쿼리문기술 });
-app.get('/detal.do/:id', ( req, res)=>{
+app.get('/detal/:id', ( req, res)=>{
     const my = req.params.id;
     const msg = `select * from t_board where id = ${my}`;
     console.log("msg : ", msg);
@@ -86,7 +86,7 @@ app.get('/detal.do/:id', ( req, res)=>{
 });
 
 //1건삭제 t_board테이블 app.get('/매핑' (req, res)=>{ 쿼리문기술 });
-app.get('/delete.do/:id', ( req, res)=>{
+app.get('/delete/:id', ( req, res)=>{
     const my = req.params.id;
     const msg = `delete from t_board where id = ${my}`;
     console.log("msg : ", msg);
@@ -101,7 +101,7 @@ app.get('/delete.do/:id', ( req, res)=>{
 });
 
 //1건수정 t_board테이블 app.get('/매핑' (req, res)=>{ 쿼리문기술 });
-app.get('/update.do/:id', ( req, res)=>{
+app.get('/update/:id', ( req, res)=>{
     const my = req.params.id;
     const title = 'AA';
     const content = 'BB';
@@ -116,4 +116,4 @@ app.get('/update.do/:id', ( req, res)=>{
             console.log("수정 실패")
         }
     });
-});
+}); 
